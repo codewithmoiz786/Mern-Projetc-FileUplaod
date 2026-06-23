@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uploadFile</title>
+</head>
+<style>
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: lightgreen;
+        border-radius: 10px;
+    }
+
+    input {
+        margin: 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+    }
+</style>
+<script>
+    let form = document.querySelector('form')
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+    })
+</script>
+
+<body>
+    <form action="http://localhost:3000/post/createPost" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="text" name="caption" placeholder="Enter Caption">
+        <button type="submit">submit</button>
+    </form>
+</body>
+
+</html>
